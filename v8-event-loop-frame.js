@@ -2,12 +2,14 @@
 // One frame takes ~1/60th of a second.
 
 while (true) {
+  // MACROTASKS
   // Taking another SINGLE Task Queue item and execute it.
   // Task queue contains CALLBACKS of happened EVENTS.
   const queue = getNextQueue();
   const taks = queue.pop();
   execute(task);
 
+  // MICROTASKS
   // Executing the WHOLE Microtasks Queue.
   // Tasks added within the frame are executed too until the queue is EMPTY.
   // Microtasks Queue mostly consists of PROMISES.
